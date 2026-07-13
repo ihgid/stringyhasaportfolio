@@ -370,7 +370,7 @@ article {
   display: flex;
   width: 10rem;
   align-items: center;
-  gap: 1rem; /* Increased gap slightly for better spacing */
+  gap: 0.5rem; /* Reverting gap to original so it takes less space */
 }
 
 article .icon {

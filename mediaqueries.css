@@ -128,6 +128,7 @@
     #experience .article-container {
       gap: 1rem;
       justify-content: center;
+      grid-template-columns: 1fr 1fr; /* Ensures it doesn't force a minimum width that overflows */
     }
     
     /* RESEARCH SECTION MOBILE */
