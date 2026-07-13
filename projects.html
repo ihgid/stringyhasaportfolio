@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects & Research - Pravakar Bogati</title>
+    <meta name="author" content="Pravakar Bogati" />
+    <meta name="description" content="Technical blog and academic research by Pravakar Bogati." />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <script>
+      function copyCitation(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Citation copied to clipboard! Thanks for referencing my work.");
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Pravakar Bogati</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Highlights</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Pravakar Bogati</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="index.html#projects" onclick="toggleMenu()">Highlights</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <main class="research-main-container">
+      <section id="blog-posts" class="research-section" style="padding-bottom: 4rem;">
+        <p class="section__text__p1 research-center">Read My</p>
+        <h1 class="title research-center">Tech Blog</h1>
+        
+        <div class="experience-details-container research-container">
+          <div class="about-containers research-list">
+          
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Solidify K12: Interactive CAD for Education</h2>
+            <p class="research-card-field">August 5, 2026</p>
+            <p class="research-card-abstract">Bringing CAD to younger students requires an intuitive interface that doesn't overwhelm them with complex operations. Solidify K12 is a project aimed at creating a simplified, web-based 3D modeling tool tailored for K-12 education.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='post.html?id=solidify-k12'">Read More</button>
+            </div>
+          </article>
+
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Finetuning ML Models for B-rep CAD Generation</h2>
+            <p class="research-card-field">July 10, 2026</p>
+            <p class="research-card-abstract">Boundary Representation (B-rep) is the de facto standard for modeling 3D objects in modern CAD systems. However, generating valid B-rep models using Machine Learning remains a significant challenge due to the complex topological constraints required to form a water-tight solid.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='post.html?id=finetuning-brep'">Read More</button>
+            </div>
+          </article>
+          
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Accessible 3D Models: Designing Prosthetics in Blender</h2>
+            <p class="research-card-field">June 20, 2026</p>
+            <p class="research-card-abstract">Prosthetic design usually requires expensive proprietary software. By leveraging Blender, an open-source 3D creation suite, we can dramatically lower the barrier to entry for developing custom-fitted prosthetics.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='post.html?id=prosthetics-blender'">Read More</button>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </main>
+
+    <main id="research-papers" class="research-main" style="padding-top: 2rem;">
+      <p class="section__text__p1 research-center">Academic Works</p>
+      <h1 class="title research-center">Research & Papers</h1>
+      
+      <div class="experience-details-container research-container">
+        <div class="about-containers research-list">
+          
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Early-Stage Fault Detection in Francis Turbines Using AI-ML</h2>
+            <p class="research-card-field">Field: Hydropower & Machine Learning | Date: 2024</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> This research explores the application of Artificial Intelligence and Machine Learning techniques to detect faults in Francis Turbines at an early stage, reducing downtime and maintenance costs in hydropower generation.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=francis-turbines'">Read PDF</button>
+            </div>
+          </article>
+          
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Design and Performance Analysis of a Cascade Refrigeration System</h2>
+            <p class="research-card-field">Field: Thermodynamics | Date: 2024</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> An analysis of the design and performance efficiency of cascade refrigeration systems, highlighting optimization strategies for industrial applications.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=cascade-refrigeration'">Read PDF</button>
+            </div>
+          </article>
+
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">A Review on Thermal Analysis of Industrial Boilers</h2>
+            <p class="research-card-field">Field: Thermal Engineering | Date: 2023</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> A comprehensive review analyzing the thermal performance and efficiency of various industrial boilers under different operational conditions.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=thermal-boilers'">Read PDF</button>
+            </div>
+          </article>
+          
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">A Review on Gradient Index Glass</h2>
+            <p class="research-card-field">Field: Optics & Material Science | Date: 2022</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> A comprehensive review of Gradient Index (GRIN) glass, exploring its optical properties, manufacturing techniques, and applications in modern optics.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=gradient-glass'">Read PDF</button>
+            </div>
+          </article>
+
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Hydrogen Storage in Metal Hydrides using AI</h2>
+            <p class="research-card-field">Field: Renewable Energy & AI | Date: 2023</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> An AI-based approach to the study of metal hydrides for hydrogen storage, exploring storage efficiency and material properties using machine learning models.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=hydrogen-hydrides'">Read PDF</button>
+            </div>
+          </article>
+
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Open Access Proceedings: Journal of Physics (USC 3rd Edition)</h2>
+            <p class="research-card-field">Field: Physics Conference | Date: 2022</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> Conference proceedings published in the Journal of Physics, featuring research presented at the Undergraduate Science Conference (USC) 3rd Edition.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=open-access-usc'">Read PDF</button>
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=usc-booklet'">View Booklet</button>
+            </div>
+          </article>
+
+          <article class="details-container color-container research-card">
+            <h2 class="experience-sub-title research-card-title">Research Poster (USC 3rd Edition)</h2>
+            <p class="research-card-field">Field: Academic Poster | Date: 2023</p>
+            <p class="research-card-abstract"><strong>Abstract:</strong> Official research poster presented at the Undergraduate Science Conference (USC) 3rd Edition.</p>
+            <div class="btn-container research-btn-container">
+              <button class="btn btn-color-2 project-btn btn-research" onclick="location.href='paper.html?id=poster-usc'">View Poster</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      
+      <div class="research-footer-text">
+        <p>To track all references officially, please visit my <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> or <a href="https://orcid.org/" target="_blank">ORCID</a> profile.</p>
+      </div>
+    </main>
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects">Highlights</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Pravakar Bogati. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

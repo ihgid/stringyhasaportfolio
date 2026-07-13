@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post - Pravakar Bogati</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+      .blog-post-main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10vh 2rem 5rem 2rem;
+        box-sizing: border-box;
+        min-height: 80vh;
+      }
+      .blog-title {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+      .blog-meta {
+        color: rgb(85, 85, 85);
+        font-size: 1rem;
+        margin-bottom: 3rem;
+      }
+      .blog-content {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: rgb(40, 40, 40);
+      }
+      .blog-content p {
+        margin-bottom: 1.5rem;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        color: rgb(85, 85, 85);
+        font-weight: 600;
+      }
+      .back-link:hover {
+        color: black;
+        text-decoration: underline;
+      }
+      @media screen and (max-width: 600px) {
+        .blog-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo" style="cursor:pointer;" onclick="location.href='index.html'">Pravakar Bogati</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Highlights</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo" style="cursor:pointer;" onclick="location.href='index.html'">Pravakar Bogati</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="index.html#projects" onclick="toggleMenu()">Highlights</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <main class="blog-post-main">
+      <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+      <h1 class="blog-title" id="post-title">Loading...</h1>
+      <p class="blog-meta" id="post-meta"></p>
+      <div class="blog-content" id="post-content">
+        <!-- Content gets injected here -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Copyright &#169; 2024 Pravakar Bogati. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const posts = {
+        "solidify-k12": {
+          title: "Solidify K12: Interactive CAD for Education",
+          date: "August 5, 2026",
+          content: `
+            <p>Bringing CAD to younger students requires an intuitive interface that doesn't overwhelm them with complex operations. Solidify K12 is a project aimed at creating a simplified, web-based 3D modeling tool tailored for K-12 education.</p>
+            <p>By focusing on basic boolean operations (union, difference, intersection) with primitive shapes, students can learn spatial reasoning and geometry in a fun, interactive environment without a steep learning curve.</p>
+            <p>The project is built on modern web technologies to ensure it runs smoothly on Chromebooks and other low-power devices commonly used in schools.</p>
+          `
+        },
+        "finetuning-brep": {
+          title: "Finetuning ML Models for B-rep CAD Generation",
+          date: "July 10, 2026",
+          content: `
+            <p>Boundary Representation (B-rep) is the de facto standard for modeling 3D objects in modern CAD systems. However, generating valid B-rep models using Machine Learning remains a significant challenge due to the complex topological constraints required to form a water-tight solid.</p>
+            <p>Recently, I've been exploring how we can adapt large generative models and finetune them to output structured B-rep data. By utilizing sequence-to-sequence architectures and masking out invalid topological connections during generation, we can drastically improve the validity of the generated geometries.</p>
+            <p>The architecture involves tokenizing the faces, edges, and vertices directly from STEP files, and training a transformer to predict bounding loops autoregressively. This required a custom loss function that heavily penalizes non-manifold outputs. The results so far have been incredibly promising, reducing invalid topologies by 40% compared to standard baselines.</p>
+            <p>I will be uploading the dataset and the open-source checkpoints to HuggingFace soon, along with a detailed breakdown of the inference pipeline. Stay tuned!</p>
+          `
+        },
+        "prosthetics-blender": {
+          title: "Accessible 3D Models: Designing Prosthetics in Blender",
+          date: "June 20, 2026",
+          content: `
+            <p>Prosthetic design usually requires expensive proprietary software. By leveraging Blender, an open-source 3D creation suite, we can dramatically lower the barrier to entry for developing custom-fitted prosthetics.</p>
+            <p>Using a combination of Python scripting within Blender and subdivision surface modeling, I created a workflow that allows for rapid customization of prosthetic sockets. This workflow can take 3D scan data and automatically conform the base mesh to the patient's unique topology.</p>
+            <p>To achieve this, I wrote an add-on that uses the Shrinkwrap modifier driven by vertex groups. The user simply imports the 3D scan, aligns it, and clicks a button to generate the foundational socket. From there, boolean operations are used to attach the standard pylon hardware.</p>
+            <p>This workflow means that small clinics in developing nations can iterate on designs using completely free software before sending the files to a local 3D printer.</p>
+          `
+        }
+      };
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+
+      if (postId && posts[postId]) {
+        const post = posts[postId];
+        document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-meta').textContent = post.date;
+        document.getElementById('post-content').innerHTML = post.content;
+        document.title = post.title + " - Pravakar Bogati";
+        // Optionally update the URL to look prettier (e.g. replacing ?id=... with a clean path if using a proper server)
+        // window.history.replaceState({}, '', '/' + postId);
+      } else {
+        document.getElementById('post-title').textContent = "Post Not Found";
+        document.getElementById('post-content').innerHTML = "<p>Sorry, the post you are looking for does not exist.</p>";
+      }
+    </script>
+  </body>
+</html>
