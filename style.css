@@ -500,6 +500,17 @@ article .icon {
 footer {
   height: 26vh;
   margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer nav {
+  height: auto;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  justify-content: center;
 }
 
 footer p {
