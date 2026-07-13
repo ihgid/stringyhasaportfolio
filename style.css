@@ -211,6 +211,8 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
+  width: auto;
+  object-fit: contain;
 }
 
 /* BUTTONS */
@@ -219,6 +221,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .btn {
@@ -301,6 +304,8 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-container {
@@ -382,7 +387,8 @@ article .icon {
 .project-img {
   border-radius: 2rem;
   width: 90%;
-  height: 90%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .project-title {
@@ -393,6 +399,49 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+.pinned-blog-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+  margin-top: 2rem;
+  background: rgb(250, 250, 250);
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.pinned-blog-container:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.pinned-blog-container:hover .pinned-blog-text p {
+  color: #ccc;
+}
+
+.pinned-blog-text {
+  text-align: left;
+}
+
+.pinned-blog-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pinned-blog-text p {
+  color: rgb(85, 85, 85);
+  font-size: 1.1rem;
+  transition: color 300ms ease;
+}
+
+.pinned-blog-arrow {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* CONTACT */
@@ -465,20 +514,25 @@ footer p {
 }
 
 .research-btn-container {
-  margin-top: 1.5rem;
+  margin-top: auto;
 }
 
 .research-list {
-  flex-direction: column;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .research-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: auto;
   text-align: left;
-  padding: 3rem;
+  padding: 2rem;
   background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
 }
 
 .research-card-title {
@@ -486,6 +540,14 @@ footer p {
   margin-bottom: 0.5rem;
   font-size: 1.8rem;
   line-height: 1.4;
+}
+
+.research-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .research-card-field {
@@ -503,7 +565,7 @@ footer p {
 
 .research-btn-container {
   justify-content: flex-start;
-  margin-top: 2rem;
+  margin-top: auto;
   gap: 1rem;
 }
 

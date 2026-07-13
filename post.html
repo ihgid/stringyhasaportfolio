@@ -60,7 +60,7 @@
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#experience">Experience</a></li>
           <li><a href="index.html#projects">Highlights</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -77,14 +77,15 @@
           <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
           <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="index.html#projects" onclick="toggleMenu()">Highlights</a></li>
-          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="publications.html" onclick="toggleMenu()">Publications</a></li>
           <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
 
     <main class="blog-post-main">
-      <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+      <a href="publications.html" class="back-link">&larr; Back to Publications</a>
+      <img id="post-hero" style="display: none; width: 100%; aspect-ratio: 16 / 9; max-height: 400px; object-fit: cover; border-radius: 1rem; margin-bottom: 2rem;" />
       <h1 class="blog-title" id="post-title">Loading...</h1>
       <p class="blog-meta" id="post-meta"></p>
       <div class="blog-content" id="post-content">
@@ -99,32 +100,41 @@
     <script src="script.js"></script>
     <script>
       const posts = {
-        "solidify-k12": {
-          title: "Solidify K12: Interactive CAD for Education",
-          date: "August 5, 2026",
-          content: `
-            <p>Bringing CAD to younger students requires an intuitive interface that doesn't overwhelm them with complex operations. Solidify K12 is a project aimed at creating a simplified, web-based 3D modeling tool tailored for K-12 education.</p>
-            <p>By focusing on basic boolean operations (union, difference, intersection) with primitive shapes, students can learn spatial reasoning and geometry in a fun, interactive environment without a steep learning curve.</p>
-            <p>The project is built on modern web technologies to ensure it runs smoothly on Chromebooks and other low-power devices commonly used in schools.</p>
-          `
-        },
-        "finetuning-brep": {
-          title: "Finetuning ML Models for B-rep CAD Generation",
+        "Cad Agent": {
+          title: "Finetuning Open LLMs for CAD Code Generation",
           date: "July 10, 2026",
+          image: "./assets/projectthumbnails/blog2-ml.png",
+          description: "Finetuning open LLM models to improve their ability to generate code that directly outputs .step files.",
+          tags: ["#MachineLearning", "#AI", "#CAD", "#CodeGeneration", "#LLM"],
           content: `
             <p>Boundary Representation (B-rep) is the de facto standard for modeling 3D objects in modern CAD systems. However, generating valid B-rep models using Machine Learning remains a significant challenge due to the complex topological constraints required to form a water-tight solid.</p>
-            <p>Recently, I've been exploring how we can adapt large generative models and finetune them to output structured B-rep data. By utilizing sequence-to-sequence architectures and masking out invalid topological connections during generation, we can drastically improve the validity of the generated geometries.</p>
-            <p>The architecture involves tokenizing the faces, edges, and vertices directly from STEP files, and training a transformer to predict bounding loops autoregressively. This required a custom loss function that heavily penalizes non-manifold outputs. The results so far have been incredibly promising, reducing invalid topologies by 40% compared to standard baselines.</p>
-            <p>I will be uploading the dataset and the open-source checkpoints to HuggingFace soon, along with a detailed breakdown of the inference pipeline. Stay tuned!</p>
+            <p>To address this, we have finetuned open LLM models to make them better at generating code that directly creates .step files. This code generation capability is the main use case of the project.</p>
+            <p>The results so far have been incredibly promising. Right now, it can successfully recreate 60% of engineering shapes, excluding B-splines and surface modeling.</p>
+            <p>Please note that while it is built on top of open models, the CAD Agent itself is a proprietary software. Stay tuned for more updates!</p>
+          `
+        },
+        "solidify-k12": {
+          title: "Solidify K12: Interactive CAD for Education",
+          date: "May 10, 2026",
+          image: "./assets/projectthumbnails/blog1-k12.png",
+          description: "A project aimed at creating a simplified, web-based 3D modeling tool tailored for K-12 education.",
+          tags: ["#CAD", "#EdTech", "#3DModeling", "#Education", "#Engineering"],
+          content: `
+            <p>Bringing CAD to younger students requires an intuitive interface that doesn't overwhelm them with complex operations. Solidify K12 is a project aimed at creating a simplified 3D modeling tool tailored for K-12 education.</p>
+            <p>By focusing on basic boolean operations (union, difference, intersection) with primitive shapes, students can learn spatial reasoning and geometry in a fun, interactive environment without a steep learning curve.</p>
+            <p>The project is built to ensure it runs well on older computers, offering both a web version and a standalone .exe application. Please note that Solidify K12 is a proprietary software.</p>
           `
         },
         "prosthetics-blender": {
           title: "Accessible 3D Models: Designing Prosthetics in Blender",
-          date: "June 20, 2026",
+          date: "February 20, 2026",
+          image: "./assets/projectthumbnails/blog3-blender.png",
+          description: "Leveraging Blender and Python scripting to lower the barrier to entry for developing custom-fitted prosthetics.",
+          tags: ["#3DModeling", "#Blender", "#Prosthetics", "#Python", "#HealthcareTech"],
           content: `
             <p>Prosthetic design usually requires expensive proprietary software. By leveraging Blender, an open-source 3D creation suite, we can dramatically lower the barrier to entry for developing custom-fitted prosthetics.</p>
-            <p>Using a combination of Python scripting within Blender and subdivision surface modeling, I created a workflow that allows for rapid customization of prosthetic sockets. This workflow can take 3D scan data and automatically conform the base mesh to the patient's unique topology.</p>
-            <p>To achieve this, I wrote an add-on that uses the Shrinkwrap modifier driven by vertex groups. The user simply imports the 3D scan, aligns it, and clicks a button to generate the foundational socket. From there, boolean operations are used to attach the standard pylon hardware.</p>
+            <p>Using a combination of Python scripting within Blender, I developed a plugin to make prosthetic modeling easy. This workflow can take 3D scan data and automatically conform the base mesh to the patient's unique topology.</p>
+            <p>The plugin drastically simplifies stump modeling with an easy mode and includes preset stumps categorized for various age groups. The user simply imports the 3D scan, aligns it, and clicks a button to generate the foundational socket.</p>
             <p>This workflow means that small clinics in developing nations can iterate on designs using completely free software before sending the files to a local 3D printer.</p>
           `
         }
@@ -137,8 +147,54 @@
         const post = posts[postId];
         document.getElementById('post-title').textContent = post.title;
         document.getElementById('post-meta').textContent = post.date;
-        document.getElementById('post-content').innerHTML = post.content;
+        
+        let tagsHtml = "";
+        if (post.tags) {
+          tagsHtml = '<div style="margin-top: 3rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">' + 
+            post.tags.map(tag => `<span style="color: #007bff; font-weight: 500; font-size: 0.9rem; background: #f0f8ff; padding: 0.2rem 0.6rem; border-radius: 1rem;">${tag}</span>`).join('') + 
+            '</div>';
+        }
+        document.getElementById('post-content').innerHTML = post.content + tagsHtml;
+        
+        if (post.image) {
+          const hero = document.getElementById('post-hero');
+          hero.src = post.image;
+          hero.style.display = 'block';
+        }
+
         document.title = post.title + " - Pravakar Bogati";
+
+        // SEO & Schema.org JSON-LD for AI Search & Indexing
+        const metaDesc = document.createElement('meta');
+        metaDesc.name = "description";
+        metaDesc.content = post.description || post.title;
+        document.head.appendChild(metaDesc);
+
+        if (post.tags) {
+          const metaKeywords = document.createElement('meta');
+          metaKeywords.name = "keywords";
+          metaKeywords.content = post.tags.map(t => t.replace('#', '')).join(', ');
+          document.head.appendChild(metaKeywords);
+        }
+
+        const jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "image": post.image ? [window.location.origin + post.image.replace('./', '/')] : [],
+          "datePublished": new Date(post.date).toISOString(),
+          "description": post.description || post.title,
+          "author": [{
+              "@type": "Person",
+              "name": "Pravakar Bogati",
+              "url": window.location.origin
+          }]
+        };
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(jsonLd);
+        document.head.appendChild(script);
+
         // Optionally update the URL to look prettier (e.g. replacing ?id=... with a clean path if using a proper server)
         // window.history.replaceState({}, '', '/' + postId);
       } else {

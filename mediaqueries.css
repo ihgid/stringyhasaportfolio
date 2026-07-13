@@ -68,6 +68,14 @@
     .btn-container {
       flex-wrap: wrap;
     }
+    .pinned-blog-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .pinned-blog-text {
+      text-align: center;
+    }
     .contact-info-container {
       margin: 0;
     }
