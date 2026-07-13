@@ -110,6 +110,9 @@
     }
     
     /* RESEARCH SECTION MOBILE */
+    .research-list {
+      grid-template-columns: 1fr;
+    }
     .research-card {
       padding: 1.5rem;
     }
