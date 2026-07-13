@@ -308,8 +308,8 @@ section {
 
 .details-container {
   padding: 1.5rem;
-  flex: 1;
-  min-width: 250px;
+  flex: 1 1 400px; /* Prefer 400px width, causing them to wrap earlier */
+  min-width: 250px; /* Still allow shrinking on very small screens */
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
