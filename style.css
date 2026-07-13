@@ -375,8 +375,8 @@ article {
 
 article .icon {
   cursor: default;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem; /* Reduced from 2rem */
+  height: 1.5rem; /* Reduced from 2rem */
   flex-shrink: 0; /* Prevents the icon from shrinking on smaller screens */
 }
 
