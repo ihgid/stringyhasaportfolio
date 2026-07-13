@@ -36,6 +36,7 @@
     }
     section {
       margin: 0 5%;
+      margin-bottom: 6rem;
     }
     .section__pic-container {
       width: 275px;
@@ -58,6 +59,7 @@
     }
     article {
       font-size: 1rem;
+      width: auto;
     }
     footer nav {
       height: fit-content;
@@ -118,6 +120,10 @@
     }
     .text-container {
       text-align: justify;
+    }
+    #experience .article-container {
+      gap: 1rem;
+      justify-content: center;
     }
     
     /* RESEARCH SECTION MOBILE */
