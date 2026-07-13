@@ -461,7 +461,8 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  min-height: 70vh;
+  height: auto;
 }
 
 .contact-info-upper-container {
@@ -498,7 +499,8 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
+  min-height: 26vh;
+  height: auto;
   margin: 0 1rem;
   display: flex;
   flex-direction: column;
