@@ -14,27 +14,35 @@
         padding: 0;
         height: 100%;
         overflow: hidden; /* Hide scrollbars for the main body */
+        display: flex;
+        flex-direction: column;
       }
       .viewer-header {
-        height: 60px;
+        min-height: 60px;
+        height: auto;
         background: white;
         display: flex;
         align-items: center;
-        padding: 0 2rem;
+        padding: 1rem 2rem;
         border-bottom: 1px solid #ccc;
         box-sizing: border-box;
+        gap: 1rem;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        line-height: 1.5;
       }
       .back-link {
         text-decoration: none;
         color: rgb(85, 85, 85);
         font-weight: 600;
+        white-space: nowrap;
       }
       .back-link:hover {
         color: black;
         text-decoration: underline;
       }
       .pdf-container {
-        height: calc(100vh - 60px);
+        flex: 1;
         width: 100%;
       }
       iframe {
@@ -43,9 +51,9 @@
         border: none;
       }
       .paper-title {
-        margin-left: 2rem;
         font-weight: 600;
         color: black;
+        word-break: break-word;
       }
     </style>
   </head>
