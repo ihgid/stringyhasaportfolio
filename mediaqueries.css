@@ -32,7 +32,8 @@
     }
     section,
     .section-container {
-      height: fit-content;
+      height: auto;
+      min-height: auto;
     }
     section {
       margin: 0 5%;
