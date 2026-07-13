@@ -2,124 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paper Viewer - Pravakar Bogati</title>
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden; /* Hide scrollbars for the main body */
-        display: flex;
-        flex-direction: column;
-      }
-      .viewer-header {
-        min-height: 60px;
-        height: auto;
-        background: white;
-        display: flex;
-        align-items: center;
-        padding: 1rem 2rem;
-        border-bottom: 1px solid #ccc;
-        box-sizing: border-box;
-        gap: 1rem;
-        flex-wrap: wrap;
-        flex-shrink: 0;
-        line-height: 1.5;
-      }
-      .back-link {
-        text-decoration: none;
-        color: rgb(85, 85, 85);
-        font-weight: 600;
-        white-space: nowrap;
-      }
-      .back-link:hover {
-        color: black;
-        text-decoration: underline;
-      }
-      .pdf-container {
-        flex: 1;
-        width: 100%;
-      }
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-      .paper-title {
-        font-weight: 600;
-        color: black;
-        word-break: break-word;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="viewer-header">
-      <a href="/publications" class="back-link">&larr; Back to Publications</a>
-      <span class="paper-title" id="paper-title">Document Viewer</span>
-    </div>
-    <div class="pdf-container">
-      <iframe id="pdf-frame" src="" title="PDF Viewer"></iframe>
-    </div>
-
+    <title>Loading Document - Pravakar Bogati</title>
     <script>
       const papers = {
-        "francis-turbines": {
-          title: "Early-Stage Fault Detection in Francis Turbines Using AI-ML",
-          file: "./assets/papers/EARLY-STAGE FAULT DETECTION IN FRANCIS TURBINES USING AI-ML.pdf"
-        },
-        "cascade-refrigeration": {
-          title: "Design and Performance Analysis of a Cascade Refrigeration System",
-          file: "./assets/papers/Design_and_Performance_Analysis_of_a_Cascade_Refrigeration_System_MEH_06_Pravakar_Bogati___.pdf"
-        },
-        "thermal-boilers": {
-          title: "A Review on Thermal Analysis of Industrial Boilers",
-          file: "./assets/papers/A Review on Thermal Analysis of Industrial Boilers..pdf"
-        },
-        "gradient-glass": {
-          title: "A Review on Gradient Index Glass",
-          file: "./assets/papers/A Review on Gradeint Index Glass.pdf"
-        },
-        "hydrogen-hydrides": {
-          title: "Hydrogen Storage in Metal Hydrides using AI",
-          file: "./assets/papers/Hydrogen Paper.pdf"
-        },
-        "open-access-usc": {
-          title: "Open Access Proceedings: Journal of Physics (USC 3rd Edition)",
-          file: "./assets/papers/Open Access proceedings Joumal of Physics-Conference series.pdf"
-        },
-        "poster-usc": {
-          title: "Research Poster (USC 3rd Edition)",
-          file: "./assets/papers/Poster-PDF-Printing.pdf"
-        },
-        "usc-booklet": {
-          title: "USC 3rd Edition Conference Booklet",
-          file: "./assets/papers/USC 3rd Edition.pdf"
-        },
-        "annual-report": {
-          title: "Annual Report MC Aasha 23.24 - AIESEC in Nepal",
-          file: "./assets/Reports/AnnualReportofMemberCommitteeAasha23.24.pdf"
-        }
+        "francis-turbines": "./assets/papers/EARLY-STAGE FAULT DETECTION IN FRANCIS TURBINES USING AI-ML.pdf",
+        "cascade-refrigeration": "./assets/papers/Design_and_Performance_Analysis_of_a_Cascade_Refrigeration_System_MEH_06_Pravakar_Bogati___.pdf",
+        "thermal-boilers": "./assets/papers/A Review on Thermal Analysis of Industrial Boilers..pdf",
+        "gradient-glass": "./assets/papers/A Review on Gradeint Index Glass.pdf",
+        "hydrogen-hydrides": "./assets/papers/Hydrogen Paper.pdf",
+        "open-access-usc": "./assets/papers/Open Access proceedings Joumal of Physics-Conference series.pdf",
+        "poster-usc": "./assets/papers/Poster-PDF-Printing.pdf",
+        "usc-booklet": "./assets/papers/USC 3rd Edition.pdf",
+        "annual-report": "./assets/Reports/AnnualReportofMemberCommitteeAasha23.24.pdf"
       };
 
       const urlParams = new URLSearchParams(window.location.search);
       const paperId = urlParams.get('id');
 
       if (paperId && papers[paperId]) {
-        const paper = papers[paperId];
-        document.getElementById('paper-title').textContent = paper.title;
-        document.title = paper.title + " - Pravakar Bogati";
-        // Use iframe to display PDF
-        document.getElementById('pdf-frame').src = paper.file + "#toolbar=0&navpanes=0&scrollbar=0"; 
+        window.location.replace(papers[paperId]);
       } else {
-        document.getElementById('paper-title').textContent = "Document Not Found";
-        document.getElementById('pdf-frame').style.display = 'none';
-        document.querySelector('.pdf-container').innerHTML = '<div style="padding: 2rem; text-align: center;">Sorry, the requested document could not be found.</div>';
+        document.write('<div style="padding: 2rem; text-align: center; font-family: sans-serif;">Sorry, the requested document could not be found. <br><br><a href="/publications">Go back to Publications</a></div>');
       }
     </script>
+  </head>
+  <body>
   </body>
 </html>
