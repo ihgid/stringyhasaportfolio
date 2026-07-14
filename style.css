@@ -360,17 +360,17 @@ section {
 
 #experience .article-container {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
-  gap: 2rem 3rem;
+  gap: 2rem 1rem;
   text-align: initial;
 }
 
 article {
   display: flex;
-  width: 10rem;
+  width: 100%;
   align-items: center;
-  gap: 0.5rem; /* Reverting gap to original so it takes less space */
+  gap: 0.5rem;
 }
 
 article .icon {
