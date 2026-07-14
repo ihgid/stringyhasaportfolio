@@ -43,7 +43,7 @@ nav {
 .nav-links {
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 a {
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .logo a {
@@ -158,9 +158,8 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  min-height: 96vh;
-  height: auto;
-  margin: 0 10rem;
+  height: fit-content;
+  margin: 0 10rem 5rem 10rem;
   box-sizing: border-box;
 }
 
@@ -174,7 +173,8 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  min-height: 60vh;
+  padding-top: 5vh;
 }
 
 .section__pic-container {
@@ -198,12 +198,12 @@ section {
 }
 
 .section__text__p2 {
-  font-size: 1.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
   margin-bottom: 1rem;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
 }
 
@@ -308,8 +308,8 @@ section {
 
 .details-container {
   padding: 1.5rem;
-  flex: 1 1 400px; /* Prefer 400px width, causing them to wrap earlier */
-  min-width: 250px; /* Still allow shrinking on very small screens */
+  flex: 1; /* Allow it to flex naturally without a large base width */
+  min-width: 250px; /* Let it wrap if the screen gets too small for 250px */
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
@@ -339,7 +339,7 @@ section {
 .experience-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
   margin-bottom: 2rem;
 }
 
@@ -443,18 +443,18 @@ article .icon {
 }
 
 .pinned-blog-text h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 0.5rem;
 }
 
 .pinned-blog-text p {
   color: rgb(85, 85, 85);
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   transition: color 300ms ease;
 }
 
 .pinned-blog-arrow {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
 }
 

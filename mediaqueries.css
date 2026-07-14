@@ -1,8 +1,8 @@
 @media screen and (max-width: 1400px) {
     #profile {
-      min-height: 83vh;
+      min-height: 60vh;
       height: auto;
-      margin-bottom: 6rem;
+      margin-bottom: 3rem;
     }
     .about-containers {
       flex-wrap: wrap;
@@ -38,7 +38,7 @@
     }
     section {
       margin: 0 5%;
-      margin-bottom: 6rem;
+      margin-bottom: 3rem;
     }
     .section__pic-container {
       width: 275px;
@@ -57,7 +57,7 @@
       height: auto;
     }
     #profile {
-      min-height: 83vh;
+      min-height: 60vh;
       height: auto;
       margin-bottom: 0;
     }
@@ -98,13 +98,13 @@
     }
     .contact-info-container p,
     .nav-links li a {
-      font-size: 1rem;
+      /* font-size handled by clamp */
     }
     .experience-sub-title {
-      font-size: 1.25rem;
+      /* font-size handled by clamp */
     }
     .logo {
-      font-size: 1.5rem;
+      /* font-size handled by clamp */
     }
     .nav-links {
       flex-direction: column;
@@ -117,10 +117,10 @@
       justify-content: center;
     }
     .section__text__p2 {
-      font-size: 1.25rem;
+      /* font-size handled by clamp */
     }
     .title {
-      font-size: 2rem;
+      /* font-size handled by clamp */
     }
     .text-container {
       text-align: justify;
