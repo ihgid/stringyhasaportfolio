@@ -4,15 +4,8 @@
       height: auto;
       margin-bottom: 3rem;
     }
-    #about .about-containers,
-    #experience .about-containers {
+    .about-containers {
       flex-wrap: wrap;
-    }
-    #highlights .about-containers {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding-bottom: 1rem; /* Space for scrollbar */
-      justify-content: flex-start; /* So they don't center and hide left side */
     }
     #contact,
     #highlights {
@@ -76,14 +69,10 @@
       height: fit-content;
       margin-bottom: 2rem;
     }
-    #about .about-containers,
-    #experience .about-containers {
+    .about-containers {
       flex-wrap: wrap;
-    }
-    #highlights .about-containers {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
     }
     .contact-info-upper-container,
     .btn-container {
