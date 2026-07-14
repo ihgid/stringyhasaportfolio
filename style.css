@@ -310,6 +310,7 @@ section {
   padding: 1.5rem;
   flex: 1; /* Allow it to flex naturally without a large base width */
   min-width: 250px; /* Let it wrap if the screen gets too small for 250px */
+  max-width: 450px; /* Prevent it from becoming excessively large when wrapped alone */
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
